@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<style>
+  table {
+    width: 400px;
+    text-align: center;
+    border: 5px solid black;
+  }
+
+  button {
+    background-color: #f56666;
+    width: 90%;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  input{
+    text-align: right;
+    font-size: 16px;
+  }
+  input{
+    width: 98%;
+  }
+</style>
+</head>
+<body>
+<h1>Calculator</h1>
+<table border="1px solid red">
+  <tr>
+    <th>
+      <button onclick="clearCalculator('c')">AC</button>
+    </th>
+    <th colspan="3" ><input id="display" type="text"></th>
+  </tr>
+  <tr>
+    <td>
+      <button class="bnt" onclick="inputButton('+')">+</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('1')">1</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('2')">2</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('3')">3</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="bnt" onclick="inputButton('-')">-</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('4')">4</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('5')">5</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('6')">6</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="bnt" onclick="inputButton('*')">*</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('7')">7</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('8')">8</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('9')">9</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="bnt" onclick="inputButton('/')">/</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('.')">.</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="inputButton('0')">0</button>
+    </td>
+    <td>
+      <button class="bnt" onclick="equal('=')">=</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="bnt" onclick="sqrtCal('&radic;')">&radic;</button>
+
+    </td>
+    <td><button class="bnt" onclick="sqrtCal('&sup2;')">X&sup2;</button></td>
+  </tr>
+</table>
+<script>
+  function inputButton(method) {
+    document.getElementById('display').value += method;
+  }
+  function equal(){
+    let method = document.getElementById('display').value;
+    let result = eval(method);
+    document.getElementById('display').value = result;
+  }
+  function clearCalculator(){
+    document.getElementById('display').value = '';
+  }
+  function sqrtCal(){
+    let sqrt = Math.sqrt(document.getElementById('display').value);
+    document.getElementById('display').value = sqrt;
+  }
+  function pow(){
+    let pows = Math.pow(document.getElementById('display').value,2)
+    document.getElementById('display').value = pows;
+  }
+</script>
+</body>
+</html>
